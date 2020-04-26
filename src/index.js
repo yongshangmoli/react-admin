@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.less';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import storageUtils from './utils/storageUtils';
+import memoryUtils from './utils/memoryUtils';
+
+const user = storageUtils.getUser();
+if (user && user._id) {
+  memoryUtils.user = user;
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App />,
   </React.StrictMode>,
   document.getElementById('root')
 );
