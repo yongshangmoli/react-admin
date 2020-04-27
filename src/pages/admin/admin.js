@@ -33,6 +33,7 @@ export default class Admin extends Component {
           <Content
             style={{
               background: 'white',
+              margin: '20px 20px 0',
             }}
           >
             <Switch>

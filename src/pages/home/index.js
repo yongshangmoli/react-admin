@@ -3,7 +3,7 @@ import './index.less';
 
 class Home extends Component {
   render() {
-    return <div className="header"> Header </div>;
+    return <div className="home">欢迎使用后台管理系统</div>;
   }
 }
 
