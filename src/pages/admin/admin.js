@@ -4,7 +4,16 @@ import { Layout } from 'antd';
 import storageUtils from '../../utils/storageUtils';
 import Header from '../../components/header';
 import LeftNav from '../../components/left-nav';
-import { Redirect } from 'react-router-dom';
+import Home from '../home/';
+import Category from '../category';
+import Product from '../product';
+import Role from '../role';
+import User from '../user';
+import Bar from '../charts/bar';
+import Line from '../charts/line';
+import Pie from '../charts/pie';
+
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 const { Footer, Sider, Content } = Layout;
 export default class Admin extends Component {
@@ -26,7 +35,17 @@ export default class Admin extends Component {
               background: 'white',
             }}
           >
-            content
+            <Switch>
+              <Route path="/home" component={Home}></Route>
+              <Route path="/category" component={Category}></Route>
+              <Route path="/product" component={Product}></Route>
+              <Route path="/role" component={Role}></Route>
+              <Route path="/user" component={User}></Route>
+              <Route path="/charts/bar" component={Bar}></Route>
+              <Route path="/charts/line" component={Line}></Route>
+              <Route path="/charts/pie" component={Pie}></Route>
+              <Redirect to="/home" />
+            </Switch>
           </Content>
           <Footer
             style={{
